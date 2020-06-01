@@ -1,7 +1,7 @@
 // a library to wrap and simplify api calls
 import apisauce from 'apisauce'
 import Config from '../Config/index';
-let token =  (Config.api.apiToken == undefined) ?  null : Config.api.apiToken
+let token =  Config.api.apiToken
 
 console.log(token,"tokennn",Config.api.host)
 
