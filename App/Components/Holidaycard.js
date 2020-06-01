@@ -20,14 +20,14 @@ const Holidaycard = (props) => {
 
 
     return (
-      <View style={{}}>
+      <View style={Fonts.style.justifyAlignCenter,[{}]}>
         <FlatList
             showsVerticalScrollIndicator={false}
             data={props.data.items}
             keyExtractor={(item, index) => index.toString()}
             renderItem={renderItem}
             contentContainerStyle={{padding:scale(10)}}
-            ListEmptyComponent={()=>{return <Emptylisting emptyText ={"No Holidays Listing"}/>}} 
+            ListEmptyComponent={()=>{return <Emptylisting emptyText ={(props.error) ? "Something Went Wrong With API" :"No Holidays Listing"}/>}} 
           />
       </View>
     )

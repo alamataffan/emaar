@@ -17,12 +17,12 @@ export function * getHomeData (api, action) {
   const { data } = action;
   // make the call to the api
   console.log("datarec")
-  const response = yield call(api.getHome,data);
+  const response = yield call(api.getHome);
   console.log(response,"responsesaga")
   if (response.ok) {
     yield put(HomeActions.homeSuccess(response.data))
   } else {
-    yield put(HomeActions.homeFailure())
+    yield put(HomeActions.homeFailure([]))
   }
 }
 

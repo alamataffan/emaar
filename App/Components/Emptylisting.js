@@ -7,7 +7,7 @@ const  Emptylisting = (props) =>{
   
     return (
       <View style={{}}>
-              <View style={{justifyContent:"center",alignItems:"center",}}>
+              <View style={{justifyContent:"flex-start",alignItems:"center",}}>
                <Card>
                 <View style={{paddingHorizontal:scale(15),paddingVertical:scale(15)}}>
                   <Text style={{fontWeight:"bold"}}>{props.emptyText || 'No Calender Found'}</Text>

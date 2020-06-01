@@ -22,47 +22,47 @@ const [password,setPassword] = useState(false)
 const [passwordError,setPasswordError] = useState(false)
 const [Cpassword,setCPassword] = useState(false)
 const [CpasswordError,setCpasswordError] = useState(false)
-const [secureTextEntry,setSecureTextEntry] = useState(false)
+const [secureTextEntry,setSecureTextEntry] = useState(true)
 const [modalVisible,setmodalVisible] = useState(false)
 
 
 
 
   
-onRegister = ()=>{
-  const nameError = validate('name', name);  
-  const emailError = validate('email', email);
-  const passwordError = validate('password',password);
-  const CpasswordError = validate('Cpassword', Cpassword);
-  console.log(CpasswordError,"CpasswordError")
- // this.setState({emailError:emailError,passwordError:passwordError,phoneNumberError:phoneNumberError,firstNameError:firstNameError,lastNameError:lastNameError})
-  setNameError(nameError) 
-  setEmailError(emailError);
-  setPasswordError(passwordError)
-  setCpasswordError(CpasswordError)
+  onRegister = ()=>{
+    const nameError = validate('name', name);  
+    const emailError = validate('email', email);
+    const passwordError = validate('password',password);
+    const CpasswordError = validate('Cpassword', Cpassword);
+    console.log(CpasswordError,"CpasswordError")
+
+    setNameError(nameError) 
+    setEmailError(emailError);
+    setPasswordError(passwordError)
+    setCpasswordError(CpasswordError)
 
 
 
-  if(nameError != null){
-    props.showToastMethod(nameError,"danger")
+    if(nameError != null){
+      props.showToastMethod(nameError,"danger")
+    }
+  else if( emailError != null){
+    props.showToastMethod(emailError,"danger")
+    }else if(passwordError != null){
+      props.showToastMethod(passwordError,"danger")
+    }else if(CpasswordError != null){
+      props.showToastMethod(CpasswordError,"danger")
+    }
+    else if(password != Cpassword){
+      props.showToastMethod('Password and Confirm Password Not Match',"danger")
+    }else{
+      toggleModal()
+    }
   }
- else if( emailError != null){
-  props.showToastMethod(emailError,"danger")
-  }else if(passwordError != null){
-    props.showToastMethod(passwordError,"danger")
-  }else if(CpasswordError != null){
-    props.showToastMethod(CpasswordError,"danger")
-  }
-  else if(password != Cpassword){
-    props.showToastMethod('Password and Confirm Password Not Match',"danger")
-  }else{
-    toggleModal()
-  }
-}
 
-toggleModal = () =>{
-  setmodalVisible(!modalVisible)
-}
+    toggleModal = () =>{
+      setmodalVisible(!modalVisible)
+    }
 
 
 

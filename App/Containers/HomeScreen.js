@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react'
 
-import { Container,Content,Root,StatusBar,SplashScreen} from '../common'
+import { View,Container,Content,Root,StatusBar,SplashScreen} from '../common'
 import {useDispatch, useSelector} from 'react-redux'
 import HeaderComponent from '../Components/Header'
 import HomeAction from '../Redux/HomeRedux'
@@ -17,15 +17,17 @@ import HocScreen from './HocScreen'
 const HomeScreen = props =>{
   const [placeHolder,setIplaceHolder] = useState([...new Array(6).fill({})])
   const [fetching,setFetching] = useState(true)
+  const [error,setError] = useState(false)
 
  
   const dispatch = useDispatch();
 
   // This is selector Act as a mapStateToProps
-  const {calender} = useSelector(state =>({
+  const {calender,all} = useSelector(state =>({
     calender :state.homeData.payload,
+    all:state.homeData
   }));
-  console.log(calender,"calender")
+  console.log(calender,"calender",all)
   
   
 
@@ -34,16 +36,21 @@ const HomeScreen = props =>{
   useEffect(() => {
     SplashScreen.hide() // i can hide splas screen after we get API response(but want to show the placeholder)
     setFetching(true);
-    dispatch(HomeAction.homeRequest('s'))
+    dispatch(HomeAction.homeRequest())
   },[]);
 
   // After Receaving Response We can call any other function/show message, etc
   useEffect(() => {
+    
     if(calender != null){
      setFetching(false);
     }
+    if(all.error ==true ){
+      setFetching(false);
+      setError(true)
+     }
   
-  },[calender]);
+  },[calender,all]);
 
 
   
@@ -58,9 +65,9 @@ const HomeScreen = props =>{
         title={'Holidays'}/>
         <Content 
         showsVerticalScrollIndicator={false}
-        style={{flex:1}}>
-        </Content>
-          {
+        style={{flex:1}}
+        >
+           {
             (fetching) ?
             <Placeholder
               horizontal={false}
@@ -70,9 +77,12 @@ const HomeScreen = props =>{
             />
             :
             <Holidaycard 
-            data={calender}
+            data={calender != null ? calender :[]}
+            error={error}
             />
           }
+        </Content>
+         
       </Container>
     </Root>
   )
