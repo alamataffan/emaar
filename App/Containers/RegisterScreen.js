@@ -1,4 +1,4 @@
-import React, {useState } from 'react'
+import React, { useState } from 'react'
 import { TouchableWithoutFeedback,Container,Content,Root,Colors,scale,Fonts,StatusBar,View,KeyboardAvoidingView,Platform,Text,validate} from '../common'
 // Styles
 import styles from './Styles/LoginScreenStyle'
@@ -80,7 +80,7 @@ const [modalVisible,setmodalVisible] = useState(false)
          <KeyboardAvoidingView
             keyboardVerticalOffset={scale(50)}
             behavior={Platform.Os == "ios" ? "padding" : "height"}
-            style={{flex:1,justifyContent:"center",alignItems:"center",width:"100%"}}
+            style={[Fonts.style.justifyAlignCenter,{flex:1,width:"100%"}]}
           >
 
           <View style={[,{width:"90%"}]}>
@@ -100,8 +100,8 @@ const [modalVisible,setmodalVisible] = useState(false)
                onBlur = {()=>{  
                 setNameError(validate('name', name)
                )}}
-              secure={false} placeholderTextColor={ Colors.darkGray} placeholderStyle={[{}]} placeholder={'Name'}
-              inputStyle={[Fonts.style.inputStyleForAuthForm]}/>
+                secure={false}  placeholder={'Name'}
+              />
 
               <Inputbox 
                error={emailError}
@@ -109,10 +109,10 @@ const [modalVisible,setmodalVisible] = useState(false)
                onBlur = {()=>{  
                 setEmailError(validate('email', email)
                )}}
-              secure={false} placeholderTextColor={ Colors.darkGray} placeholderStyle={[{}]} placeholder={'Email'}
-              inputStyle={[Fonts.style.inputStyleForAuthForm]}/>
+                secure={false}   placeholder={'Email'}
+              />
 
-              <Inputbox  placeholderTextColor={ Colors.darkGray} placeholderStyle={[{}]} placeholder={'Password'} 
+              <Inputbox    placeholder={'Password'} 
                eyeToggle = {()=>{setSecureTextEntry(!secureTextEntry)}}
                secureTextEntry={secureTextEntry}
                passwordField = {true}
@@ -121,9 +121,9 @@ const [modalVisible,setmodalVisible] = useState(false)
                 onBlur = {()=>{  
                  setPasswordError(validate('password', password)
                 )}}
-                inputStyle={[Fonts.style.inputStyleForAuthForm]}/>
+                />
 
-                <Inputbox  placeholderTextColor={ Colors.darkGray} placeholderStyle={[{}]} placeholder={'Confirm Password'} 
+                <Inputbox   placeholder={'Confirm Password'} 
                 eyeToggle = {()=>{setSecureTextEntry(!secureTextEntry)}}
                 secureTextEntry={secureTextEntry}
                 passwordField = {true}
@@ -132,23 +132,24 @@ const [modalVisible,setmodalVisible] = useState(false)
                 onBlur = {()=>{  
                  setCpasswordError( Cpassword
                 )}}
-                inputStyle={[Fonts.style.inputStyleForAuthForm]}/>
+               />
 
            
                 <Authbutton onPressAuth={()=>{onRegister()}}
                   buttonText={'Register'} 
                   buttonTextStyle={{padding:scale(0),color:Colors.white,fontSize:Fonts.size.font14,}}
-                  buttonStyle={{justifyContent: 'center',backgroundColor:Colors.darkGray,borderRadius:scale(8),
-                  alignItems: 'center',marginVertical:scale(0),justifyContent:"center",padding:scale(10)}}
+                  buttonStyle={[Fonts.style.justifyAlignCenter,{backgroundColor:Colors.darkGray,borderRadius:scale(8),
+                  padding:scale(10)}]}
                   />
 
                 <TouchableWithoutFeedback onPress={()=>{props.navigateTo('HomeScreen')}}>
-                    <View style={[{marginVertical:scale(20),flexDirection:"row",justifyContent:"center"}]}>
+                    <View style={[Fonts.style.directionRow,{marginVertical:scale(20),justifyContent:"center"}]}>
                       <View style={{}}>
                         <Text style={[{color:Colors.darColor,fontSize:Fonts.size.font12,}]}>Countinue To Calender</Text>
                       </View>
                     </View>
               </TouchableWithoutFeedback>
+
             </View>
           </View>     
           </KeyboardAvoidingView>

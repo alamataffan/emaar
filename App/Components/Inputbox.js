@@ -1,6 +1,6 @@
 import React, {  } from 'react'
 
-import { View, Text ,TextInput,TouchableWithoutFeedback,Fonts,scale} from '../common'
+import { View ,TextInput,Fonts,Colors} from '../common'
 import styles from './Styles/InputboxStyle'
 
 
@@ -17,8 +17,8 @@ import styles from './Styles/InputboxStyle'
        error={props.error}
        value={props.value}
        secureTextEntry={props.secureTextEntry}
-        placeholderTextColor={props.placeholderTextColor} 
-        style={[props.inputStyle,{fontSize:Fonts.size.font14,textAlign:"left"}]} 
+        placeholderTextColor={[{color:Colors.darkGray}]} 
+        style={[Fonts.style.inputStyleForAuthForm,{fontSize:Fonts.size.font14,textAlign:"left"}]} 
         value={props.value} placeholder={props.placeholder}
         keyboardType={props.keyboardType 
         
