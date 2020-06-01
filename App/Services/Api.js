@@ -22,10 +22,6 @@ const create =  (baseURL = Config.api.host) => {
     headers:{
       'Cache-Control': 'no-cache'
     },
-   
-    // here are some default headers
-    
-    // 10 second timeout...
     timeout: 10000
   })
 
@@ -42,7 +38,7 @@ const create =  (baseURL = Config.api.host) => {
   //
   // Since we can't hide from that, we embrace it by getting out of the
   // way at this level.
-  //25.274783, 51.531700
+  
 
   const getHome = () => api.get(`calendars/en.ae%23holiday%40group.v.calendar.google.com/events?key=${token}`);
  
@@ -63,8 +59,6 @@ const create =  (baseURL = Config.api.host) => {
   return {
     // a list of the API functions from step 2
     getHome,
-   
-    
   }
 }
 
