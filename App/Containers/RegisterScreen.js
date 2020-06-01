@@ -99,8 +99,8 @@ const [modalVisible,setmodalVisible] = useState(false)
                onBlur = {()=>{  
                 setNameError(validate('name', name)
                )}}
-              secure={false} placeholderTextColor={ Colors.darkGray} placeholderStyle={[Fonts.type.customFontLight,{}]} placeholder={'Name'}
-              inputStyle={[Fonts.type.fontMedium,Fonts.style.inputStyleForAuthForm]}/>
+              secure={false} placeholderTextColor={ Colors.darkGray} placeholderStyle={[{}]} placeholder={'Name'}
+              inputStyle={[Fonts.style.inputStyleForAuthForm]}/>
 
 
            
@@ -112,13 +112,13 @@ const [modalVisible,setmodalVisible] = useState(false)
                onBlur = {()=>{  
                 setEmailError(validate('email', email)
                )}}
-              secure={false} placeholderTextColor={ Colors.darkGray} placeholderStyle={[Fonts.type.customFontLight,{}]} placeholder={'Email'}
-              inputStyle={[Fonts.type.fontMedium,Fonts.style.inputStyleForAuthForm]}/>
+              secure={false} placeholderTextColor={ Colors.darkGray} placeholderStyle={[{}]} placeholder={'Email'}
+              inputStyle={[Fonts.style.inputStyleForAuthForm]}/>
 
       
 
 
-              <Inputbox  placeholderTextColor={ Colors.darkGray} placeholderStyle={[Fonts.type.customFontLight,{}]} placeholder={'Password'} 
+              <Inputbox  placeholderTextColor={ Colors.darkGray} placeholderStyle={[{}]} placeholder={'Password'} 
                eyeToggle = {()=>{setSecureTextEntry(!secureTextEntry)}}
                secureTextEntry={secureTextEntry}
                passwordField = {true}
@@ -128,8 +128,8 @@ const [modalVisible,setmodalVisible] = useState(false)
                  setPasswordError(validate('password', password)
                 )}}
                
-                inputStyle={[Fonts.type.fontMedium,Fonts.style.inputStyleForAuthForm]}/>
-                <Inputbox  placeholderTextColor={ Colors.darkGray} placeholderStyle={[Fonts.type.customFontLight,{}]} placeholder={'Confirm Password'} 
+                inputStyle={[Fonts.style.inputStyleForAuthForm]}/>
+                <Inputbox  placeholderTextColor={ Colors.darkGray} placeholderStyle={[{}]} placeholder={'Confirm Password'} 
                eyeToggle = {()=>{setSecureTextEntry(!secureTextEntry)}}
                secureTextEntry={secureTextEntry}
                passwordField = {true}
@@ -139,7 +139,7 @@ const [modalVisible,setmodalVisible] = useState(false)
                  setCpasswordError( Cpassword
                 )}}
                
-                inputStyle={[Fonts.type.fontMedium,Fonts.style.inputStyleForAuthForm]}/>
+                inputStyle={[Fonts.style.inputStyleForAuthForm]}/>
 
            
             <Authbutton onPressAuth={()=>{onRegister()}}
@@ -152,7 +152,7 @@ const [modalVisible,setmodalVisible] = useState(false)
             <TouchableWithoutFeedback onPress={()=>{props.navigateTo('HomeScreen')}}>
               <View style={[{marginVertical:scale(20),flexDirection:"row",justifyContent:"center"}]}>
                  <View style={{}}>
-                   <Text style={[Fonts.type.customFontRegular,{color:Colors.darColor,fontSize:Fonts.size.font12,}]}>Countinue To Calender</Text>
+                   <Text style={[{color:Colors.darColor,fontSize:Fonts.size.font12,}]}>Countinue To Calender</Text>
                  </View>
               </View>
               </TouchableWithoutFeedback>
