@@ -1,8 +1,5 @@
 // src/config/index.js
 
-import config from 'react-native-config';
-import AsyncStorage from '@react-native-community/async-storage';
-import { GoogleSignin} from '../common'
 
 let configs =  {
   api: {

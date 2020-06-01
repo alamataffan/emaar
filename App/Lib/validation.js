@@ -25,22 +25,21 @@ const validation = {
     }
   },
 
-  
-  phoneNumber: {
+  Cpassword: {
     presence: {
       message: true
     },
     length: {
       minimum: 8,
-      message: '^Your Mobile Number  must be of 8 Digits'
-    },
-    numericality: {
-      onlyInteger: true,
-      message: 'Only Interger Allowed'
+      message: '^Your Confirm password must be at least 8 characters'
     }
   },
 
-  firstName: {
+
+  
+
+
+  name: {
     presence: {
       message: true
     },
@@ -53,16 +52,7 @@ const validation = {
    
    
   },
-  lastName: {
-    presence: {
-      message: true
-    },
-    format: {
-      pattern: "[a-z]+",
-      flags: "i",
-      message: "can only contain letters"
-    }
-  }
+
 }
 
 export default validation

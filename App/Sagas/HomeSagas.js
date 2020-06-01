@@ -12,24 +12,14 @@
 
 import { call, put } from 'redux-saga/effects'
 import HomeActions from '../Redux/HomeRedux'
-import AsyncStorage from '@react-native-community/async-storage';
-import Config from '../Config/index';
-// import { HomeSelectors } from '../Redux/HomeRedux'
-
-
 
 export function * getHomeData (api, action) {
   const { data } = action;
   // make the call to the api
- 
-    console.log(data,"data---")
-  //console.log("asdfsdf",apiToken)
-  
+  console.log("datarec")
   const response = yield call(api.getHome,data);
-  console.log("response----??",response)
+  console.log(response,"responsesaga")
   if (response.ok) {
-    // You might need to change the response here - do this with a 'transform',
-    // located in ../Transforms/. Otherwise, just pass the data back from the api.
     yield put(HomeActions.homeSuccess(response.data))
   } else {
     yield put(HomeActions.homeFailure())

@@ -1,7 +1,7 @@
 // a library to wrap and simplify api calls
 import apisauce from 'apisauce'
 import Config from '../Config/index';
-let token =  (Config.api.token == undefined) ?  null : Config.api.token
+let token =  (Config.api.apiToken == undefined) ?  null : Config.api.apiToken
 
 console.log(token,"tokennn",Config.api.host)
 
@@ -44,31 +44,9 @@ const create =  (baseURL = Config.api.host) => {
   // way at this level.
   //25.274783, 51.531700
 
-  const getHome = (data) => api.get(`home?lat=${data.lat}&long=${data.long}`);
-  const getProductList = (data) => api.get(`listings/category/${data.id}?lat=${data.coords.latitude}&long=${data.coords.longitude}`);
-  const getProductDetails = (data) => api.get(`listings/${data.id}`);
-  const getlogin = (data) => api.post(`login`,data);
-  const getAuth = (apiToken) => api.get("user/me",{},{ headers:{
-    'Authorization': 'Bearer ' + apiToken,
-   
-  }});
-  const getSignUp = (data) => api.post(`signup/user`,data);
-
-  const getWishList = (apiToken) => api.get(`wishlists/me`,{},{ headers:{
-    'Authorization': 'Bearer ' + apiToken,
-   
-  }});
-
-  const addWishList = (data,apiToken) => api.post(`wishlists`,data,{ headers: {
-    "Content-type": "application/json; charset=UTF-8",
-    'Authorization': 'Bearer ' + apiToken,
-   
-  }})
-
-  const deleteWishList = (data,apiToken) => api.delete(`wishlists/${data.listing_id}`,{},{ headers:{
-    'Authorization': 'Bearer ' + apiToken,
-
-  }});
+  const getHome = () => api.get(`calendars/en.ae%23holiday%40group.v.calendar.google.com/events?key=${token}`);
+ 
+ 
 
   // ------
   // STEP 3
@@ -85,14 +63,7 @@ const create =  (baseURL = Config.api.host) => {
   return {
     // a list of the API functions from step 2
     getHome,
-    getProductList,
-    getProductDetails,
-    getlogin,
-    getAuth,
-    getSignUp,
-    getWishList,
-    addWishList,
-    deleteWishList
+   
     
   }
 }

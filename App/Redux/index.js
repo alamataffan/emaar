@@ -5,12 +5,6 @@ import rootSaga from '../Sagas/'
 /* ------------- Assemble The Reducers ------------- */
 export const reducers = combineReducers({
   homeData: require('./HomeRedux').reducer,
-  productList : require('./ProductlistRedux').reducer,
-  productDetails : require('./ProductdetailRedux').reducer,
-  common : require('./CommonRedux').reducer,
-  login : require('./LoginRedux').reducer,
-  register :require('./RegisterRedux').reducer,
- 
 })
 
 export default () => {

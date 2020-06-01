@@ -8,7 +8,7 @@ export default StyleSheet.create({
   },
 
   headerBgColor :{
-    backgroundColor:Colors.DarkGreen,
+    backgroundColor:Colors.darkGray,
     elevation:0,
     borderWidth:0,
     borderBottomWidth:0,

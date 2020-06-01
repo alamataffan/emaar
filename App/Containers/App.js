@@ -22,9 +22,9 @@ class App extends Component {
   render () {
     return (
         <Provider store={store}>      
-          { Platform.OS == 'android'? <StatusBar translucent={true} backgroundColor={Colors.DarkGreen}  barStyle="dark-content" />:  <StatusBar backgroundColor={Colors.DarkGreen} barStyle="dark-content"/>}     
+          { Platform.OS == 'android'? <StatusBar translucent={true} backgroundColor={Colors.darkGray}  barStyle="dark-content" />:  <StatusBar backgroundColor={Colors.DarkGreen} barStyle="dark-content"/>}     
 					<SafeAreaProvider>
-							<SafeAreaView style={{ flex:1,}}  forceInset={{ top:"never", bottom:"never" }}  >
+							<SafeAreaView style={{ flex:1,}}  forceInset={{ top:"never" }}  >
                 <AppNavigation />
                 </SafeAreaView>
 						</SafeAreaProvider>

@@ -40,7 +40,7 @@
 	  lightGreen :"#D8FFE0",
 	  darColor :"#606366",
 	  bottomLine:"#B0B6BA",
-		darkGray :"#AFB3B9",
+		darkGray :"#56555A",
 		black :"#000"
 	
 }

@@ -7,7 +7,7 @@ export default StyleSheet.create({
     flex: 1
   },
   withBorder :{
-    borderBottomColor:Colors.DarkGreen,
+    borderBottomColor:Colors.darkGray,
   
     borderTopLeftRadius:scale(100),
     borderTopRightRadius:scale(100),

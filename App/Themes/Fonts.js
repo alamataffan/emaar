@@ -1,6 +1,5 @@
 import { View, Text,ImageBackground,StatusBar } from 'react-native'
 import { scale } from "react-native-size-matters";
-import { strings,isRTL } from '../language/i18n';
 import { Colors } from '.';
 
 const type = {
@@ -153,12 +152,12 @@ const style = {
   },
   inputStyleForAuthForm :{
 
-      color:Colors.DarkGreen,   
+      color:Colors.darkGray,   
       justifyContent:"center",
       marginBottom:scale(15) ,       
       borderColor:Colors.black,borderWidth:1,borderRadius:scale(8),
       backgroundColor:"transparent",
-      padding:scale(18),
+      padding:scale(10),
       
     
   }
