@@ -34,7 +34,7 @@ const [modalVisible,setmodalVisible] = useState(false)
     const emailError = validate('email', email);
     const passwordError = validate('password',password);
     const CpasswordError = validate('Cpassword', Cpassword);
-    console.log(CpasswordError,"CpasswordError")
+
 
     setNameError(nameError) 
     setEmailError(emailError);

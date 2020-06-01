@@ -27,7 +27,6 @@ const HomeScreen = props =>{
     calender :state.homeData.payload,
     all:state.homeData
   }));
-  console.log(calender,"calender",all)
   
   
 
