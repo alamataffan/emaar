@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "emaarhos.jpg",
+      "filename" : "emaar2.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "emaarhos-1.jpg",
+      "filename" : "emaar2-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "emaarhos-2.jpg",
+      "filename" : "emaar2-2.png",
       "scale" : "3x"
     }
   ],
